@@ -1,3 +1,3 @@
 # stolen-society-signup
 front end page for clothing brand mailing list
-react js
+built in react js
