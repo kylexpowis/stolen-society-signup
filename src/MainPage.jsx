@@ -9,7 +9,7 @@ const MainPage = () => {
       <img src={stolensocietylogo} alt="Logo" className="h-[250px] w-auto" />
       <div className="mb-2">
         <TypeAnimation
-          sequence={["JOIN THE WAITING LIST FOR 20%", 1000]}
+          sequence={["JOIN THE WAITING LIST FOR 20% OFF!", 1000]}
           wrapper="span"
           speed={20}
           style={{
