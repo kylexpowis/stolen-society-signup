@@ -35,7 +35,7 @@ const EmailForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col items-center w-80 max-w-sm"
+      className="flex flex-col items-center w-70 max-w-sm"
     >
       <input
         type="email"
