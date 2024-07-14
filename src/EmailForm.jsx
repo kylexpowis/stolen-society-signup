@@ -9,13 +9,16 @@ const EmailForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/addSubscriber", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
+      const response = await fetch(
+        "stolensociety-mailchimp-server-7v8m-pwmiiqtsy.vercel.app",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
 
       if (response.ok) {
         setMessage("Thank you for signing up!");
