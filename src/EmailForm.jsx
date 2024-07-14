@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const EmailForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -17,6 +19,7 @@ const EmailForm = () => {
 
       if (response.ok) {
         setMessage("Thank you for signing up!");
+        navigate("/thankyoupage");
       } else {
         const errorData = await response.json();
         setMessage(`Error: ${errorData.title}`);
