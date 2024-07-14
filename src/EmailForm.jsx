@@ -10,7 +10,7 @@ const EmailForm = () => {
     event.preventDefault();
     try {
       const response = await fetch(
-        "stolensociety-mailchimp-server-7v8m-pwmiiqtsy.vercel.app",
+        "https://stolensociety-mailchimp-server-7v8m-pwmiiqtsy.vercel.app",
         {
           method: "POST",
           headers: {
