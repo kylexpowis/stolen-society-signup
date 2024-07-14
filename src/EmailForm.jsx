@@ -43,8 +43,19 @@ const EmailForm = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="p-2 mb-4 w-full text-white"
+        className="p-2 mb-4 w-full text-white relative"
+        style={{
+          backgroundColor: "#1a1a1a",
+          textAlign: "center",
+        }}
       />
+      <span
+        className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none"
+        style={{
+          color: "#668",
+        }}
+      ></span>
+
       <button
         type="submit"
         className="p-2 w-full bg-transparent text-white border border-white hover:bg-gray-300"
