@@ -47,7 +47,7 @@ const EmailForm = () => {
       />
       <button
         type="submit"
-        className="p-2 w-full bg-white text-black hover:bg-gray-300"
+        className="p-2 w-full bg-transparent text-white border border-white hover:bg-gray-300"
       >
         Submit
       </button>
