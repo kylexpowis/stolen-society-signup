@@ -45,7 +45,7 @@ const EmailForm = () => {
         required
         className="p-2 mb-4 w-full text-white relative"
         style={{
-          backgroundColor: "#1a1a1a",
+          backgroundColor: "black",
           textAlign: "center",
         }}
       />
