@@ -2,19 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "addSubscriber.js",
+      "src": "api/*/.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "src/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/api/addSubscriber",
-      "methods": ["POST"],
-      "dest": "addSubscriber.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "addSubscriber.js"
+      "src": "/api/mailchimp",
+      "dest": "/api/mailchimp.js"
     }
   ]
 }
