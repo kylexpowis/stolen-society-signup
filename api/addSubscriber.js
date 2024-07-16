@@ -7,7 +7,7 @@ export const addMember = async (email) => {
 
   try {
     const response = await axios.post(
-      `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`,
+      `https://stolensociety-mailchimp-server-7v8m-di8k5amg2.vercel.app`,
       {
         email_address: email,
         status: "subscribed",
@@ -19,7 +19,6 @@ export const addMember = async (email) => {
         },
         mode: "no-cors",
       }
-      //   console.log(response)
     );
   } catch (error) {
     console.error(error);
