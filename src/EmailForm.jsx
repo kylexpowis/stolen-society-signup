@@ -11,16 +11,16 @@ const EmailForm = () => {
     event.preventDefault();
     try {
       const response = await addMember(email);
-      // if (response) {
-      //   console.log(response);
-      //   setMessage("Thank you for signing up!");
-      //   navigate("/thankyoupage");
-      // }
+      if (response) {
+        console.log(response);
+        setMessage("Thank you for signing up!");
+        navigate("/thankyoupage");
+      }
     } catch (error) {
-      console.log(error);
-      // setMessage(
-      //   `Error: ${error.response ? error.response.data.title : error.message}`
-      // );
+      console.error(error);
+      setMessage(
+        `Error: ${error.message}`
+      );
     }
   };
 
