@@ -1,13 +1,16 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "api/**/*.js",
-            "use": "@vercel/node"
-        }
+      {
+        "src": "api/**/*.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+      {
+        "src": "/api/mailchimp",
+        "dest": "/api/mailchimp.js"
+      }
     ]
-}
+  }
+  
