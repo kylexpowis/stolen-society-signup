@@ -23,10 +23,7 @@ const EmailForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col items-center w-70 max-w-sm"
-    >
+    <form onSubmit={handleSubmit} className="flex flex-col items-center w-70 max-w-sm">
       <input
         type="email"
         placeholder="Enter your email"
@@ -39,17 +36,7 @@ const EmailForm = () => {
           textAlign: "center",
         }}
       />
-      <span
-        className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none"
-        style={{
-          color: "#668",
-        }}
-      ></span>
-
-      <button
-        type="submit"
-        className="p-2 w-full bg-transparent text-white border border-white hover:bg-gray-300"
-      >
+      <button type="submit" className="p-2 w-full bg-transparent text-white border border-white hover:bg-gray-300">
         Submit
       </button>
       {message && <p className="mt-4">{message}</p>}
