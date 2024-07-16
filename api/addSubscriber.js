@@ -7,7 +7,7 @@ export const addMember = async (email) => {
 
   try {
     const response = await axios.post(
-      `https://stolensociety-mailchimp-server-7v8m-di8k5amg2.vercel.app`,
+      `https://stolensociety-mailchimp-server-7v8m-di8k5amg2.vercel.app/api/addSubscriber`,
       {
         email_address: email,
         status: "subscribed",
