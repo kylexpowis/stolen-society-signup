@@ -21,7 +21,6 @@ export const addMember = async (email) => {
           Authorization: `Basic ${API_KEY}`,
           "Content-Type": "application/json",
         },
-        mode: "no-cors",
       }
     );
   } catch (error) {
