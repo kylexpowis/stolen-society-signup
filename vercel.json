@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.js",
+      "src": "addSubscriber.js",
       "use": "@vercel/node"
     }
   ],
@@ -10,11 +10,11 @@
     {
       "src": "/api/addSubscriber",
       "methods": ["POST"],
-      "dest": "server.js"
+      "dest": "addSubscriber.js"
     },
     {
       "src": "/(.*)",
-      "dest": "server.js"
+      "dest": "addSubscriber.js"
     }
   ]
 }
