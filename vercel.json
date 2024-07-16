@@ -1,11 +1,12 @@
 {
-    "version": 2,
-    "builds": [
-      { "src": "server.js", "use": "@vercel/node" }
-    ],
-    "routes": [
-      { "src": "/api/addSubscriber", "methods": ["POST"], "dest": "server.js" },
-      { "src": "/(.*)", "dest": "server.js" }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [{ "src": "/api/addSubscriber", "use": "@vercel/node" }],
+  "routes": [
+    {
+      "src": "/api/addSubscriber",
+      "methods": ["POST"],
+      "dest": "/api/addSubscriber"
+    },
+    { "src": "/(.*)", "dest": "/api/addSubscriber" }
+  ]
+}
