@@ -6,9 +6,6 @@ export default defineConfig(({ mode }) => {
   const REGION = env.VITE_MAILCHIMP_REGION
   const LIST_ID = env.VITE_MAILCHIMP_LIST_ID
 
-  console.log('Mailchimp Region:', REGION)
-  console.log('Mailchimp List ID:', LIST_ID)
-
   return {
     plugins: [react()],
     server: {
