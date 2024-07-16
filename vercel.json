@@ -7,9 +7,7 @@
         }
     ],
     "routes": [
-        {
-            "src": "/api/mailchimp",
-            "dest": "/api/mailchimp.js"
-        }
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
     ]
 }
