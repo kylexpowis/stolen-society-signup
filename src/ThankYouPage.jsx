@@ -1,5 +1,4 @@
 import React from "react";
-import EmailForm from "./EmailForm";
 import { TypeAnimation } from "react-type-animation";
 import stolensocietylogo from "./assets/stolensocietylogo.png";
 
