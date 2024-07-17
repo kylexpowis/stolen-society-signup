@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
     plugins: [react(), vercel()],
     server: {
       proxy: {
-        "/api/mailchimp/members": {
+        "/api/mailchimp/": {
           target: `https://${REGION}.api.mailchimp.com/3.0`,
           changeOrigin: true,
           rewrite: (path) =>
