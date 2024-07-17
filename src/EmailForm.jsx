@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { addMember } from "../api/addSubscriber";
+import { addMember } from "./api/addMember";
 
 const EmailForm = () => {
   const [email, setEmail] = useState("");
@@ -13,8 +13,10 @@ const EmailForm = () => {
       const response = await addMember(email);
       if (response) {
         console.log(response);
-        setMessage("Thank you for signing up");
-        navigate("/thankyoupage");
+        setMessage("Thank you for signing up!");
+        setTimeout(() => {
+          navigate("/thankyoupage");
+        }, 2000);
       }
     } catch (error) {
       console.error(error);
