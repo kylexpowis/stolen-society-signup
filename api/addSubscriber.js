@@ -16,19 +16,23 @@ export default async function handler(req, res) {
     status: 'subscribed',
   };
 
-  const response = await fetch(`https://${REGION}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `apikey ${API_KEY}`,
-    },
-    body: JSON.stringify(data),
-  });
+  try {
+    const response = await fetch(`https://${REGION}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `apikey ${API_KEY}`,
+      },
+      body: JSON.stringify(data),
+    });
 
-  if (response.ok) {
-    res.status(200).json({ message: 'Subscription successful' });
-  } else {
-    const errorData = await response.json();
-    res.status(response.status).json({ error: errorData });
+    if (response.ok) {
+      res.status(200).json({ message: 'Subscription successful' });
+    } else {
+      const errorData = await response.json();
+      res.status(response.status).json({ error: errorData });
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 }

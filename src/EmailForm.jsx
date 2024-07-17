@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { addMember } from "../api/addSubscriber";
+import { addMember } from "./api/addMember";
 
 const EmailForm = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +16,7 @@ const EmailForm = () => {
         setMessage("Thank you for signing up!");
         setTimeout(() => {
           navigate("/thankyoupage");
-        }, 2000);  // Redirect to thank you page after 2 seconds
+        }, 2000);
       }
     } catch (error) {
       console.error(error);
