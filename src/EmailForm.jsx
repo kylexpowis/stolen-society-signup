@@ -13,7 +13,7 @@ const EmailForm = () => {
       const response = await addMember(email);
       if (response) {
         console.log(response);
-        setMessage("Thank you for signing up!");
+        setMessage("Thank you for signing up");
         navigate("/thankyoupage");
       }
     } catch (error) {
