@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { addMember } from "../api/addSubscriber";
 
 const EmailForm = () => {
   const [email, setEmail] = useState("");
@@ -10,14 +9,25 @@ const EmailForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await addMember(email);
-      if (response) {
-        console.log(response);
-        setMessage("Thank you for signing up");
+      const response = await fetch("/api/addSubscriber", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log(responseData);
+        setMessage("Thank you for signing up!");
         navigate("/thankyoupage");
+      } else {
+        const errorData = await response.json();
+        setMessage(`Error: ${errorData.error.message}`);
       }
     } catch (error) {
-      console.error(error);
+      console.error("Error adding member:", error);
       setMessage(`Error: ${error.message}`);
     }
   };
