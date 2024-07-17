@@ -11,6 +11,11 @@ export default async function handler(req, res) {
   const LIST_ID = process.env.VITE_MAILCHIMP_LIST_ID;
   const API_KEY = process.env.MAILCHIMP_API_KEY;
 
+  if (!REGION || !LIST_ID || !API_KEY) {
+    console.error('Missing Mailchimp environment variables');
+    return res.status(500).json({ error: 'Server configuration error' });
+  }
+
   const data = {
     email_address: email,
     status: 'subscribed',
@@ -30,9 +35,11 @@ export default async function handler(req, res) {
       res.status(200).json({ message: 'Subscription successful' });
     } else {
       const errorData = await response.json();
+      console.error('Mailchimp API error:', errorData);
       res.status(response.status).json({ error: errorData });
     }
   } catch (error) {
+    console.error('Request to Mailchimp failed:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 }
