@@ -14,11 +14,13 @@ const EmailForm = () => {
       if (response) {
         console.log(response);
         setMessage("Thank you for signing up!");
-        navigate("/thankyoupage");
+        setTimeout(() => {
+          navigate("/thankyoupage");
+        }, 2000);  // Redirect to thank you page after 2 seconds
       }
     } catch (error) {
       console.error(error);
-      setMessage(`Error: ${error.message}`);  
+      setMessage(`Error: ${error.message}`);
     }
   };
 
