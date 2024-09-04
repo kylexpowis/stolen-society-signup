@@ -52,13 +52,13 @@ const MainPage = () => {
       </animated.div>
       <animated.div style={formAnimation}>
         <EmailForm />
-        <div className="flex justify-center w-full">
+        {/* <div className="flex justify-center w-full">
           <a href="https://store.stolensociety.co.uk" target="_blank">
             <button className="p-2 bg-grey text-white hover:bg-gray-300 mt-[30px] ">
               Visit Store
             </button>
           </a>
-        </div>
+        </div> */}
       </animated.div>
     </div>
   );
