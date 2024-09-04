@@ -30,7 +30,13 @@ const MainPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-full bg-black text-white">
-      <animated.img style={logoAnimation} src={logo} alt="Logo" className="h-[250px] w-auto" loading="eager" />
+      <animated.img
+        style={logoAnimation}
+        src={logo}
+        alt="Logo"
+        className="h-[250px] w-auto"
+        loading="eager"
+      />
       <animated.div style={typographyAnimation} className="mb-2">
         <TypeAnimation
           sequence={["JOIN THE WAITING LIST FOR 20% OFF!", 1000]}
@@ -47,6 +53,11 @@ const MainPage = () => {
       <animated.div style={formAnimation}>
         <EmailForm />
       </animated.div>
+      <a href="https://store.stolensociety.co.uk" target="_blank">
+        <button className="p-2 bg-grey text-white hover:bg-gray-300 mt-[30px] ">
+          Visit Store
+        </button>
+      </a>
     </div>
   );
 };
